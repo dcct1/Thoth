@@ -18,7 +18,7 @@
 
     <Loggers>
     
-    		<Logger name="dcct1" level="debug"/>
+    		<Logger name="com.dcct1" level="debug"/>
 
         <Root level="info">
             <AppenderRef ref="STDOUT"/>

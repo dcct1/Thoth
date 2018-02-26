@@ -85,7 +85,7 @@
             
         </Root>
         
-        <Logger name="com" level="info">
+        <Logger name="com.dcct1" level="info">
     		            
             <!-- Rolling log appenders that write info messages to one log and errors to another -->
             
@@ -99,7 +99,7 @@
     		
     		<!-- A logger to specifically target the com.oreallyoreilly package so could set logging levels for just it -->
     
-    		<Logger name="com.oreallyoreilly" level="info">
+    		<Logger name="com.dcct1" level="info">
     		            
             <!-- Rolling log appenders that write info messages to one log and errors to another -->
             
