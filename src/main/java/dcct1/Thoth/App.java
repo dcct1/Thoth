@@ -5,6 +5,12 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Scanner;
 import java.io.File;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -27,6 +33,9 @@ import joptsimple.OptionSet;
  * Provides a refresher OOP in Java
  * Provide an introduction to project file structure layout - MAEN Archetype
  */
+
+
+
 public class App 
 {
     public static void main( String[] args )
@@ -42,6 +51,10 @@ public class App
     
     private Scanner someInput;
     private Date today;
+    
+    private static String VERSION = "0.4";
+    
+    private String databaseFile = "jdbc:sqlite:database/oreallyoreilly.db";
     
     private static Logger LOG;
     
@@ -67,7 +80,10 @@ public class App
     this.someInput = new Scanner(System.in);
     
     //do something
-    System.out.println("\n Sooon.... stuff will happen here ");
+    // this line was for testing System.out.println("\n Sooon.... stuff will happen here ");
+    
+    showListOfUsers();
+    
     
     //pause before exit
     System.out.println("\n Press enter to exit program");
@@ -81,7 +97,7 @@ public class App
     public App() {
 		this(Level.INFO);
 	}
-
+   
 	
     public static void actionCommandlineInput (String args[]) 
     {
@@ -106,7 +122,7 @@ public class App
 				
 				if	(options.has("version"))
 				{
-								System.out.println("Thoth verion 0.3");
+								System.out.println("Thoth verion :" + VERSION);
 								System.exit(0);
 				}
 				
@@ -134,6 +150,7 @@ public class App
 
     public static void seeCommandlineInput (String args[])
     {
+    	
     	if (args.length == 0)
     	{
     		System.out.println("There was no commands passed");
@@ -160,6 +177,8 @@ public class App
 						LOG.error("ERROR:	Unable	to	print	usage	-	"	+	ioEx);
 					}
 	}
+	
+	
     
     /**
      * test the Log4j2 logging
@@ -175,6 +194,58 @@ public class App
     	
     	LOG.info("Appending string: {}.", "Application log test message - hi ");
     	
+    	
+    }
+    /**
+     * print a list of users from the specified database
+     */
+    
+    private void showListOfUsers()
+    {
+    	this.today = new Date();
+    	LOG.debug("Getting list of Users from database as of " + today);
+    	
+    	LOG.debug("Database file" + this.databaseFile );
+    	
+    	Connection connection = null;
+    	
+    	try 
+    	{
+    		connection = DriverManager.getConnection(this.databaseFile);
+    		
+    		Statement statement = connection.createStatement();
+    		
+    		statement.setQueryTimeout(30); //timeout after 30 secs
+    		
+    		ResultSet resultSet = statement.executeQuery("select * from user");
+    		
+    		
+    		while(resultSet.next())
+    			
+    		{
+    			LOG.debug("User found: " + resultSet.getString("userName"));
+    		}
+    	}
+    	catch(SQLException e) 
+    	{
+    		LOG.error(e.getMessage());
+    	}
+    	
+    	finally 
+    	{
+    		
+    		try
+    		
+    		{
+    			if(connection != null)
+    				connection.close();
+    		}
+    		catch(SQLException e) 
+        	{
+        		LOG.error(e.getMessage());
+        	}
+        	
+    	}
     	
     }
 }
