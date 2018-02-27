@@ -17,6 +17,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.config.Configurator;
 
+import dcct1.Thoth.menu.MenuBuilder;
 import joptsimple.OptionException;
 import joptsimple.OptionParser;
 import joptsimple.OptionSet;
@@ -76,16 +77,11 @@ public class App
     	//test the logging
     	testLogOutput();
     	
+    	MenuBuilder theMenu = new MenuBuilder;
     	
-    this.someInput = new Scanner(System.in);
-    
-    //do something
-    // this line was for testing System.out.println("\n Sooon.... stuff will happen here ");
-    
-    showListOfUsers();
-    
-    
-    //pause before exit
+    	theMenu.getMenu().display();
+    	
+    	
     System.out.println("\n Press enter to exit program");
     this.someInput.nextLine();
     
