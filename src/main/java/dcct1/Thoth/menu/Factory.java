@@ -160,7 +160,7 @@ public	class	Factory	{
 								{
 												throw new	FactoryException(e);
 								}
-								//	instanciate	the	object	using	the	constructor
+								
 								try
 								{
 												return	(Object)con.newInstance(parameters);
