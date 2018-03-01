@@ -15,6 +15,14 @@ import joptsimple.OptionException;
 import joptsimple.OptionParser;
 import joptsimple.OptionSet;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+
+
 
 /**
  * Date: Feb 2018
@@ -37,8 +45,14 @@ public class App
     	//to instantiate App class based in the parameters entered at the commandline
     	actionCommandlineInput(args);
     }
+    
+    
     	//DATA
     	// define attributes
+    private static String VERSION = "0.4";
+    
+    
+    private String	databaseFile = "jdbc:sqlite:C://Users/Declan/OneDrive - Concern Worldwide/CCT/Software Semester 2/_dev/Thoth/database/oreallyoreilly.db";
     
     private Scanner someInput;
     private Date today;
@@ -61,19 +75,24 @@ public class App
     	
     	
     	//test the logging
-    	testLogOutput();
+    	//testLogOutput();
     	
     	
-    this.someInput = new Scanner(System.in);
+    	this.someInput = new Scanner(System.in);
+    	showListOfUsers();
+
     
     //do something
-    System.out.println("\n Sooon.... stuff will happen here ");
+   // System.out.println("\n Sooon.... stuff will happen here ");
     
     //pause before exit
+    	
+    	
     System.out.println("\n Press enter to exit program");
     this.someInput.nextLine();
     
     //close the program without error
+    
     System.exit(0);
     
     }
@@ -106,7 +125,7 @@ public class App
 				
 				if	(options.has("version"))
 				{
-								System.out.println("Thoth verion 0.3");
+								System.out.println("Thoth verion " + VERSION);
 								System.exit(0);
 				}
 				
@@ -123,7 +142,7 @@ public class App
 			}
 
     	}
-    			catch	(OptionException	argsEx)
+    			catch	(OptionException argsEx)
     		{
     					System.out.println("ERROR:	Arguments\\parameter	is	not	valid.	"	+	argsEx);
     		}
@@ -141,7 +160,7 @@ public class App
     	}
     	else
     	{
-    		//dispaly the command line text entered
+    		//display the command line text entered
     		for(int i=0; i <args.length; i++)
     		{
     			System.out.println(args[i]);
@@ -159,6 +178,63 @@ public class App
 					{							//	System.out.println("ERROR:	Unable	to	print	usage	-	"	+	ioEx);
 						LOG.error("ERROR:	Unable	to	print	usage	-	"	+	ioEx);
 					}
+	}
+	
+	private void	showListOfUsers()
+	{
+	this.today	=	new	Date();
+		LOG.debug("Getting	list	of	Users	from	Database	as	of	"	+	today);
+					
+	//if	log	level	id	debug	e.g.	-v	parameter	used	then	show	database	file	being	used
+		LOG.debug("Database	file:"	+	this.databaseFile);
+					
+					//	Get	JDBC	connection	to	database
+		Connection	connection	=	null;
+					
+		try
+		{
+		//	create	a	database	connection
+		connection	=	DriverManager.getConnection(	this.databaseFile);
+						
+		Statement	statement	=	connection.createStatement();
+		
+		statement.setQueryTimeout(30);		//	set	timeout	to	30	sec.
+							
+		//	Run	the	query
+							
+		ResultSet	resultSet	=	statement.executeQuery("select	*	from	user");
+							
+		//	iterate	through	the	results	create	User	objects	put	in	the	ListArray
+							
+		while(resultSet.next())
+			{
+			LOG.debug(	"User	found:	"	+	resultSet.getString("userName")	);
+			}
+						 		
+		}
+		catch(SQLException e)
+					
+		{
+	//	if	the	error	message	is	"out	of	memory",
+		//	it	probably	means	no	database	file	is	found
+		
+		LOG.error(e.getMessage());
+		}	
+		finally
+			{
+		try
+		
+			{
+		if(connection	!=	null)
+			connection.close();
+			}
+		catch(SQLException	e)
+			{
+			//	connection	close
+			LOG.error(e.getMessage());
+			}
+		}
+					
 	}
     
     /**
