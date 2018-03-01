@@ -1,10 +1,10 @@
 package dcct1.Thoth.menu;
 
-public class ConsoleControls {
+
 	
 	public	class ConsoleControls {
 		
-		//console	colors	may	not	work	in	windows
+		
 		public	static final String	ANSI_RESET	=	"\u001B[0m";
 		public	static final String	ANSI_BLACK	=	"\u001B[30m";
 		public	static final String	ANSI_RED	=	"\u001B[31m";
@@ -61,4 +61,4 @@ public class ConsoleControls {
 		
 }
 
-}
+

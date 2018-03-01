@@ -47,7 +47,7 @@ public class Factory {
 		return createObject(className, parameters, parameterNames);
 	}
 	
-	public Object	getObject(	String	className,Object parameter,String parameterName)
+	public Object	getObject(	String	className, Object parameter,String parameterName)
 	
 	throws FactoryException
 		{
@@ -58,15 +58,19 @@ public class Factory {
 		return	createObject(className,	parameters,	parameterNames);
 		}	
 	
-	public Object getObject(String className, Object[ parameters, String[] parameterNames);
+	
+	public Object getObject(String className, Object[]  parameters, String[] parameterNames)
+	
 	throws FactoryException
 	
 	{
 		return createObject(className, parameters, parameterNames );
 	}
+	
+	
 	public Object	createObject(	String	className,
-			Object[]	parameters,
-			String[]	parameterClassNames	)
+									Object[]	parameters,
+									String[]	parameterClassNames	)
 	
 	throws	FactoryException
 		{
@@ -74,15 +78,19 @@ public class Factory {
 				Class	theClass;				//	represents	a	classes	and	interfaces	in	a	running	java	application
 										//	see	if	class	exists	and	can	be	initialised
 
-				try
-					{
-					theClass	=	Class.forName(className);				//causes	the	class	to	be	initilised
-						}
-					catch	(ClassNotFoundException	e)
-					{
-						throw new	FactoryException(e);
-					}
-		Constructor	con;	
+	try
+			{
+			
+		theClass	=	Class.forName(className);				//causes	the	class	to	be	initilised
+			}
+					
+	catch	(ClassNotFoundException	e)
+			{
+		throw new	FactoryException(e);
+			}
+		
+	
+	Constructor	con;	
 		
 		Class[]	classParams	=	new	Class[parameters.length];
 		try

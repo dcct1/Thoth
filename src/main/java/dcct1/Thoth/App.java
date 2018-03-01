@@ -18,9 +18,18 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.config.Configurator;
 
 import dcct1.Thoth.menu.MenuBuilder;
+import dcct1.Thoth.data.DataManagerSQLite;
+
 import joptsimple.OptionException;
 import joptsimple.OptionParser;
 import joptsimple.OptionSet;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 
 
 /**
@@ -53,7 +62,7 @@ public class App
     private Scanner someInput;
     private Date today;
     
-    private static String VERSION = "0.4";
+    private static String VERSION = "0.5";
     
     private String databaseFile = "jdbc:sqlite:database/oreallyoreilly.db";
     
@@ -75,14 +84,21 @@ public class App
     	
     	
     	//test the logging
-    	testLogOutput();
+    	//testLogOutput();
     	
-    	MenuBuilder theMenu = new MenuBuilder;
+    	this.someInput	=	new	Scanner(System.in);
+    	
+    	MenuBuilder theMenu = new MenuBuilder();
     	
     	theMenu.getMenu().display();
     	
+		DataManagerSQLite.getInstance().setDataFile(this.databaseFile);
+		
+		
+    	
     	
     System.out.println("\n Press enter to exit program");
+    
     this.someInput.nextLine();
     
     //close the program without error

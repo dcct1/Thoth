@@ -1,6 +1,6 @@
 package dcct1.Thoth.menu;
 
-public class IExecutable {
+public interface IExecuatable {
 	
 	public void execute();
 

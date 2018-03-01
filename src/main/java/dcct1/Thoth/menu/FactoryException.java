@@ -1,6 +1,6 @@
 package dcct1.Thoth.menu;
 
-public class FactoryException {
+
 	public	class FactoryException extends Exception
 	{
 					public	FactoryException()	{}
@@ -19,4 +19,4 @@ public class FactoryException {
 					}
 	}
 
-}
+

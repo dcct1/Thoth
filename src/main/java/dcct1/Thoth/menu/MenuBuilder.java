@@ -45,21 +45,21 @@ public class MenuBuilder {
 		
 		playHeading.add(new MenuItem(3, "List Users", "List the users available in the system", "dcct1.thoth.User.ViewMenuItem"));
 		
-		maintainHeading.add(new MenuItem(1, "Add Music", "Add music", "dcct1.thoth.menu.UndefinedMenuItem"));
+		maintainHeading.add(new MenuItem(1, "Add Music", "Add music", "dcct1.thoth.menu.UserViewMenuItem"));
 		
-		maintainHeading.add(new MenuItem(2, "Add Music", "Add music", "dcct1.thoth.menu.UndefinedMenuItem"));
+		maintainHeading.add(new MenuItem(2, "Add Music", "Add music", "dcct1.thoth.menu.UserViewMenuItem"));
 
-		maintainHeading.add(new MenuItem(3, "Add Music", "Add music", "dcct1.thoth.menu.UndefinedMenuItem"));
+		maintainHeading.add(new MenuItem(3, "Add Music", "Add music", "dcct1.thoth.menu.UserViewMenuItem"));
 
-		maintainHeading.add(new MenuItem(4, "Edit Music", "Edit music", "dcct1.thoth.menu.UndefinedMenuItem"));
+		maintainHeading.add(new MenuItem(4, "Edit Music", "Edit music", "dcct1.thoth.menu.UserViewMenuItem"));
 
-		maintainHeading.add(new MenuItem(5, "Edit Playlist", "Edit playlist", "dcct1.thoth.menu.UndefinedMenuItem"));
+		maintainHeading.add(new MenuItem(5, "Edit Playlist", "Edit playlist", "dcct1.thoth.menu.UserViewMenuItem"));
 
-		adminHeading.add(	new	MenuItem(1,"Remove	a	User","Remove	a	user","dcct1.thoth.menu.UndefinedMenuItem"));
+		adminHeading.add(new MenuItem(1,"Remove	a	User","Remove	a	user","dcct1.thoth.menu.UserViewMenuItem"));
 		
-		adminHeading.add(	new	MenuItem(2,"Remove	Music","Remove music","dcct1.thoth.menu.UndefinedMenuItem"));
+		adminHeading.add(new MenuItem(2,"Remove	Music","Remove music","dcct1.thoth.menu.UserViewMenuItem"));
 
-		adminHeading.add(	new	MenuItem(3,"Remove	a	Playlist","Remove	a playing","dcct1.thoth.menu.UndefinedMenuItem"));
+		adminHeading.add(new MenuItem(3,"Remove	a	Playlist","Remove	a playing","dcct1.thoth.menu.UserViewMenuItem"));
 
 	}
 	
