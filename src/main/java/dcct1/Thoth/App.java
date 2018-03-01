@@ -11,6 +11,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.config.Configurator;
 
+
 import joptsimple.OptionException;
 import joptsimple.OptionParser;
 import joptsimple.OptionSet;
@@ -21,7 +22,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-
+import dcct1.Thoth.menu.MenuBuilder;
 
 
 /**
@@ -76,6 +77,10 @@ public class App
     	
     	//test the logging
     	//testLogOutput();
+    	
+    	MenuBuilder	theMenu	=	new	MenuBuilder();
+		
+		theMenu.getMenu().display();
     	
     	
     	this.someInput = new Scanner(System.in);
