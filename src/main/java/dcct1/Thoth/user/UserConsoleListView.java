@@ -18,7 +18,7 @@ public class UserConsoleListView
 	public void setUserList(ArrayList<User>	userList) 
 	
 		{
-			this.userList	=	userList;
+			this.userList =	userList;
 		}
 				
 	public void display()
@@ -26,7 +26,7 @@ public class UserConsoleListView
 	{
 		System.out.println(	ConsoleControls.ANSI_YELLOW_BRIGHT +	"...	USER VIEWER	..."+	ConsoleControls.ANSI_RESET);
 		System.out.println("\n");
-		Iterator<User>	iterator	=	this.userList.iterator();
+		Iterator<User>iterator = this.userList.iterator();
 		
 		
 		

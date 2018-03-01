@@ -108,8 +108,7 @@ public class User {
 				"User [userID=%s, userName=%s, userEmail=%s, userRole=%s, userToken=%s, userStatus=%s, userLastUpdate=%s]",
 				userID, userName, userEmail, userRole, userToken, userStatus, userLastUpdate);
 	}
-	
-	
+
 
 	
 }
