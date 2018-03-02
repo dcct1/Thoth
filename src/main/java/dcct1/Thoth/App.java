@@ -54,19 +54,17 @@ public class App
     private static String VERSION = "0.5";
     
     
-    private String	databaseFile = "jdbc:sqlite:C://Users/Declan/OneDrive - Concern Worldwide/CCT/Software Semester 2/_dev/Thoth/database/oreallyoreilly.db";
-    
+   // private String	databaseFile = "jdbc:sqlite:C://Users/Declan/OneDrive - Concern Worldwide/CCT/Software Semester 2/_dev/Thoth/database/oreallyoreilly.db";
+    private String dbURL;
     
     
     private static Logger LOG;
     
     
-    //Constructors
-    
-    public App(Level logLevel)
+    public App(String dbURL, Level logLevel)
     {
     	
-    //associate logging with this class so we know the message comes from this class
+    	this.dbURL = dbURL;
     	
     	LOG = LogManager.getLogger(App.class);
     	Configurator.setLevel(LOG.getName(), logLevel);
@@ -80,7 +78,7 @@ public class App
     	
     	this.someInput = new Scanner(System.in);
     	
-    	DataManagerSQLite.getInstance().setDataFile(this.databaseFile);
+    	DataManagerSQLite.getInstance().setDataFile(this.dbURL);
     	
     	
     	MenuBuilder	theMenu	=	new	MenuBuilder();
@@ -103,61 +101,201 @@ public class App
     System.out.println("\n Press enter to exit program");
     this.someInput.nextLine();
     
-    //close the program without error
     
     System.exit(0);
     
     }
     
-    public App() {
-		this(Level.INFO);
+    public App(String dbFile) {
+		this(dbFile, Level.INFO);
 	}
 
+    public String getDtabaseName()
+    {
+    	return this.dbURL;
+    }
 	
     public static void actionCommandlineInput (String args[]) 
-    {
-    	try {
-    		
-    		final OptionParser optionParser = new OptionParser();
-    		
-    		optionParser.acceptsAll(Arrays.asList("v","verbose"),"set logging level to DEBUG to see all logging levels").forHelp();
-    		
-    		optionParser.acceptsAll(Arrays.asList("h","help"),"display help usage information").forHelp();
-    		optionParser.acceptsAll(Arrays.asList("r","version"),"display program version information").forHelp();
-    	
-    			final OptionSet options = optionParser.parse(args);
-    			
-    			if	(options.has("help"))
-				{
-								System.out.println("This	program	takes	an	SQL	database	with	a	User	table	as	displays	the	users.");
-								System.out.println("It	is	provided	as	an	example	for	teaching	Java	programming.");
-								printUsage(optionParser);
-								System.exit(0);
-				}
-				
-				if	(options.has("version"))
-				{
-								System.out.println("Thoth verion " + VERSION);
-								System.exit(0);
-				}
-				
-			if (options.has("verbose"))
-			{
-							Level logLevel	=	Level.DEBUG;
-							System.out.println("RUN	WITH:	logging	level	requested:	" +logLevel);
-							App	anApp	=	new	App(logLevel);
-			}
-			else
-			{
-							System.out.println("RUN	WITH:	logging	level	requested:	"	+	Level.INFO);
-							App	anApp = new App();
-			}
+	{
+		String	filename	=	null;
+		String	dbType	=	null;
+		String	dbURL	=	null;
+		
+		try
+	
+		{	
+			final	OptionParser	optionParser	=	new	OptionParser();
+													
+			optionParser.acceptsAll(Arrays.asList("v",	"verbose"),	"Set	logging	level	to	DEBUG	to	see	all	levels	of	log	messages").forHelp();
 
-    	}
-    			catch	(OptionException argsEx)
-    		{
-    					System.out.println("ERROR:	Arguments\\parameter	is	not	valid.	"	+	argsEx);
-    		}
+
+			optionParser.acceptsAll(Arrays.asList("h",	"help"),	"Display	help/usage	information").forHelp();
+			
+			optionParser.acceptsAll(Arrays.asList("r",	"version"),	"Display	program	version	information").forHelp();
+			
+			optionParser.acceptsAll(Arrays.asList("d",	"database"),	"Path	and	name	of	database	file.")
+			
+			.withRequiredArg()
+			
+			.ofType(String.class)
+			
+			.describedAs("SQlite	database");
+			
+			
+			
+			final	OptionSet	options	=	optionParser.parse(args);
+			
+			
+			
+			if	(options.has("help"))
+			
+			{
+			
+				System.out.println("This	program	takes	an	SQL	database	with	a	User	table	as	displays	the	users.");
+				
+				System.out.println("It	is	provided	as	an	example	for	teaching	Java	programming.");
+				
+				printUsage(optionParser);
+				
+				System.exit(0);
+				
+			}
+										
+			
+			if	(options.has("version"))
+				
+			{
+			
+				System.out.println("Pythia	version	:	"	+	VERSION);
+			
+				System.exit(0);
+				
+			}
+													
+			if	(!options.has("database"))
+			
+			{
+			
+				System.out.println("Option	\"-d	database\"	is	required");
+				
+				System.out.println("expecting	the	filename	to	be	specified	as	follows:	jdbc:sqlite:filepath\filename");
+														
+				
+				System.exit(0);
+				
+			}
+			
+			else
+			
+			{
+														
+				
+				dbURL	=	(String)	options.valueOf("database");
+				
+														
+				
+				filename	=	dbURL.substring(dbURL.lastIndexOf(':')+1);
+				
+														
+				
+				dbType	=	dbURL.substring(dbURL.indexOf(':')+1,	dbURL.lastIndexOf(':'));
+				
+				
+			}
+										
+										
+			
+			if	(	dbType.equals("sqlite"))
+			
+			{
+			
+				if	(!new	File(filename).isFile())
+				
+				{
+																	
+					System.out.println("ERROR:	Database	file	does	not	exist	:	"	+	(String)options.valueOf("database"));
+					
+					System.out.println("If	the	file	is	in	the	same	directory	as	the	JAR	then	the	location	would	be:	databaseFileName.Extention");
+					
+					
+					System.out.println("for	windows	the	database	file	location	would	be:	C://folder/folder/databaseFileName.Extention");
+					
+					System.out.println("for	MAC	the	database	file	location	would	be:	/Volumes/VolumeName/folder/folder/databaseFileName.Extention");
+					
+					System.exit(0);
+				
+				}	 	 	 	 	 	
+				
+			}
+			
+			else if	(	dbType.equals("mysql"))
+				
+			{
+				System.out.println("Support	for	mySQL	is	coming	soon.	Please	use	an	SQLite	database");
+			 	
+				System.exit(0);		 	 	 	
+				
+			}
+			
+			else
+			
+			{
+			
+				System.out.println("Unsupported	database	type	requested	"	+	dbType);
+				
+				System.exit(0);
+				
+			}
+										
+			
+										
+			
+			if	(options.has("database")	&&	options.has("verbose"))
+			
+			{
+			
+				Level	logLevel	=	Level.DEBUG;
+				
+				System.out.println("RUN	WITH:	Database:	"	+	dbURL	+	"	logging	level	requested:	"	+	logLevel);
+				
+				App	anApp	=	new	App(	dbURL,	logLevel);
+				
+			}
+			
+			else
+			
+			{
+			
+				System.out.println("RUN	WITH:	Database:	"	+	dbURL	+	"	logging	as	per	main/resources/Log4J2.xml");
+				
+				App	anApp	=	new	App(dbURL);
+				
+			}	 			
+									
+			
+		}
+		
+		catch	(OptionException	argsEx)
+		
+		{
+		
+			System.out.println("ERROR:	Arguments\\parameter	is	not	valid.	"	+	argsEx);
+			
+			System.exit(0);
+			
+		}
+		
+		catch	(IndexOutOfBoundsException	iobEx)
+		
+		{
+		
+			System.out.println("ERROR:	invalid	database	name	format	provided	"	+	iobEx);
+			
+			System.out.println("expecting	the	filename	to	be	specified	as	follows	>	jdbc:sqlite:filepath\filename");
+			
+			System.exit(0);	
+			
+		}
 }
     
     private static void printUsage(final	OptionParser	parser)
