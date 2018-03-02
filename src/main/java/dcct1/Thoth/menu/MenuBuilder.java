@@ -44,16 +44,20 @@ public	class MenuBuilder {
 					//	play	menu
 								
 								
-					playHeading.add(new	MenuItem(1, "List	Playlists", "List	the	playlists	available	in	the	system","dcct1.Thoth.playlist.PlaylistViewMenuItem"));
-								playHeading.add(new	MenuItem
+					playHeading.add(new	MenuItem(1, "List	Playlists",
+							"List	the	playlists	available	in	the	system",
+							"dcct1.Thoth.playlist.PlaylistViewMenuItem"));
+								
+					
+					playHeading.add(new	MenuItem
 										(	
 										2,
-										"List	Music",
+										"List	Music ",
 										"List	the	music	available	in	the	system",
 										"dcct1.Thoth.music.MusicViewMenuItem"
 										));
 								
-								playHeading.add(	new	MenuItem(	
+					playHeading.add(	new	MenuItem(	
 																
 										3,
 										"List	Users",
@@ -61,7 +65,7 @@ public	class MenuBuilder {
 										"dcct1.Thoth.user.UserViewMenuItem"
 										));	
 								
-								//	maintain	menu
+								
 								
 								maintainHeading.add(new	MenuItem(	
 											1,
@@ -80,7 +84,7 @@ public	class MenuBuilder {
 												3,
 												"Add	Playlist",
 												"Add	a	playlist",
-												"com.oreallyoreilly.pythia.menu.UndefinedMenuItem"
+												"dcct1.Thoth.menu.playlist,PlaylistViewMenuItem"
 												));	
 								
 								maintainHeading.add(new	MenuItem(	
@@ -102,21 +106,21 @@ public	class MenuBuilder {
 												1,
 												"Remove	a	User",
 												"Remove	a	user",
-												"dcct1.Thoth.menu.UndefinedMenuItem"
+												"dcct1.Thoth.menu.UsrViewMenuItem"
 												));
 								
 								adminHeading.add(new MenuItem(	
 											2,
 											"Remove	Music",
 											"Remove	music",
-											"dcct1.Thoth.pythia.menu.UndefinedMenuItem"
+											"dcct1.Thoth.pythia.menu.MusicViewMenuItem"
 											));
 								
 								adminHeading.add(	new	MenuItem(	
 											3,
 											"Remove	a	Playlist",
 											"Remove	a	playlist",
-											"com.oreallyoreilly.pythia.menu.UndefinedMenuItem"
+											"dcct1.Thoth.menu.PlaylistViewMenuItem"
 											));
 				}
 				
