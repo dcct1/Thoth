@@ -13,10 +13,11 @@ public class MusicViewMenuItem implements IExecuatable {
 
 	public void execute() {
 		
-		System.out.println( ConsoleControls.ANSI_YELLOW_BRIGHT + "... MUSIC VIEWER ..." + ConsoleControls.ANSI_RESET);
+		System.out.println( ConsoleControls.ANSI_GREEN_BRIGHT + "... MUSIC VIEWER ..." + ConsoleControls.ANSI_RESET);
 		System.out.println("\n"+ MusicViewMenuItem.class.getName() + " has no MVC implementation.");
         System.out.println(" \n Press enter return to the main menu");
 		this.input.nextLine();
 	}
 
 }
+                     

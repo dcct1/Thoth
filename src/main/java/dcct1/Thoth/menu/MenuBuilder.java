@@ -71,56 +71,56 @@ public	class MenuBuilder {
 											1,
 											"Add	User",
 											"Add	a	user",
-											"dcct1.Thoth.menu.UndefinedMenuItem"
+											"dcct1.Thoth.user.UserViewMenuItem"
 											));	 	
 								
 								maintainHeading.add(new	MenuItem(	
 												2,
 												"Add	Music",
 												"Add	music",
-												"dcct1.Thoth.menu.UndefinedMenuItem"
+												"dcct1.Thoth.music.MusicViewMenuItem"
 												));	 	 	
 								maintainHeading.add(new	MenuItem(	
 												3,
 												"Add	Playlist",
 												"Add	a	playlist",
-												"dcct1.Thoth.menu.playlist,PlaylistViewMenuItem"
+												"dcct1.Thoth.playlistPlaylistViewMenuItem"
 												));	
 								
 								maintainHeading.add(new	MenuItem(	
 												4,
 												"Edit	Music",
 												"Edit	music",
-												"dcct1.Thoth.menu.UndefinedMenuItem"
+												"dcct1.Thoth.music.MusicViewMenuItem"
 												));	
 								
 								maintainHeading.add(new	MenuItem(	
 												5,
 												"Edit	Playlist",
 												"Edit	a	playlist",
-												"dcct1.Thoth.menu.UndefinedMenuItem"
+												"dcct1.Thoth.playlist.PlaylistViewMenuItem"
 												));
-								//	admin	menu
+								
 								
 								adminHeading.add(new MenuItem(	
 												1,
 												"Remove	a	User",
 												"Remove	a	user",
-												"dcct1.Thoth.menu.UsrViewMenuItem"
+												"dcct1.Thoth.user.UserViewMenuItem"
 												));
 								
 								adminHeading.add(new MenuItem(	
 											2,
 											"Remove	Music",
 											"Remove	music",
-											"dcct1.Thoth.pythia.menu.MusicViewMenuItem"
+											"dcct1.Thoth.music.MusicViewMenuItem"
 											));
 								
 								adminHeading.add(	new	MenuItem(	
 											3,
 											"Remove	a	Playlist",
 											"Remove	a	playlist",
-											"dcct1.Thoth.menu.PlaylistViewMenuItem"
+											"dcct1.Thoth.playlist.PlaylistViewMenuItem"
 											));
 				}
 				
