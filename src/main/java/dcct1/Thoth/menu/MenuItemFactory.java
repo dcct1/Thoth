@@ -49,7 +49,7 @@ public class MenuItemFactory
 								
 		if	("dcct1.Thoth.playlist.UndefinedMenuItem".equals(className))	{
 		
-			return	(IExecuatable)	new UndefinedMenuItem();
+			return	(IExecuatable)	new PlaylistViewMenuItem();
 			
 		}
 		
