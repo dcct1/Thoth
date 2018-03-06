@@ -10,9 +10,7 @@ public class UserViewMenuItem implements IExecuatable
 				
 	public	void	execute()
 	{
-		//System.out.println("I	ran:	"	+	UserViewMenuItem.class.getName());
-								
-		//Get	the	User	data
+		
 		UserDAO	model	=	new UserDAO(	DataManagerSQLite.getInstance()	);
 		
 		UserConsoleListView	view	=	new UserConsoleListView();

@@ -14,10 +14,9 @@ public class User {
 		private String userToken;
 		private int userStatus;
 		private String userLastUpdate;
-		public User(int userID, String userName, String userEmail, String userRole, String userToken, int userStatus,
-				
-				
-			String userLastUpdate) {
+		public User(int userID, String userName, String userEmail, String userRole, String userToken, int userStatus,String userLastUpdate) {
+			
+			
 			this.userID = userID;
 			this.userName = userName;
 			this.userEmail = userEmail;

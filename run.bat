@@ -11,4 +11,5 @@ java -cp  target\Thoth-v1.jar dcct1.Thoth.App -version
 java -cp  target\Thoth-v1.jar dcct1.Thoth.App -h
 
 java -cp  target\Thoth-v1.jar dcct1.Thoth.App 
+
 PAUSE
