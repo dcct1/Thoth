@@ -42,7 +42,7 @@ public class UserDAO implements IUserDAO
 						Statement	statement	=	connection.createStatement();
 						statement.setQueryTimeout(30);		//	set	timeout	to	30	sec.
 										
-						ResultSet	resultSet	=	statement.executeQuery("select	*	from	user");
+						ResultSet resultSet = statement.executeQuery("select * from user;");
 										
 										
 										
