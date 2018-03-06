@@ -91,11 +91,6 @@ public class App
     	
     	//showListOfUsers();
 
-    
-    //do something
-   // System.out.println("\n Sooon.... stuff will happen here ");
-    
-    //pause before exit
     	
     	
     System.out.println("\n Press enter to exit program");
@@ -126,24 +121,24 @@ public class App
 		{	
 			final	OptionParser	optionParser	=	new	OptionParser();
 													
-			optionParser.acceptsAll(Arrays.asList("v",	"verbose"),	"Set	logging	level	to	DEBUG	to	see	all	levels	of	log	messages").forHelp();
+			optionParser.acceptsAll(Arrays.asList("v",	"verbose"),	"Set logging level to DEBUG to see all levels of log messages").forHelp();
 
 
-			optionParser.acceptsAll(Arrays.asList("h",	"help"),	"Display	help/usage	information").forHelp();
+			optionParser.acceptsAll(Arrays.asList("h",	"help"), "Display help/usage information").forHelp();
 			
-			optionParser.acceptsAll(Arrays.asList("r",	"version"),	"Display	program	version	information").forHelp();
+			optionParser.acceptsAll(Arrays.asList("r",	"version"),	"Display program version information").forHelp();
 			
-			optionParser.acceptsAll(Arrays.asList("d",	"database"),	"Path	and	name	of	database	file.")
+			optionParser.acceptsAll(Arrays.asList("d", "database"),	"Path and name of database file.")
 			
 			.withRequiredArg()
 			
 			.ofType(String.class)
 			
-			.describedAs("SQlite	database");
+			.describedAs("SQlite database");
 			
 			
 			
-			final	OptionSet	options	=	optionParser.parse(args);
+			final OptionSet	options	= optionParser.parse(args);
 			
 			
 			
@@ -231,7 +226,7 @@ public class App
 			else if	(	dbType.equals("mysql"))
 				
 			{
-				System.out.println("Support	for	mySQL	is	coming	soon.	Please	use	an	SQLite	database");
+				System.out.println("Support	for	mySQL is coming	soon. Please	use	an	SQLite	database");
 			 	
 				System.exit(0);		 	 	 	
 				
@@ -241,7 +236,7 @@ public class App
 			
 			{
 			
-				System.out.println("Unsupported	database	type	requested	"	+	dbType);
+				System.out.println("Unsupported	database type requested	"	+	dbType);
 				
 				System.exit(0);
 				
@@ -250,15 +245,15 @@ public class App
 			
 										
 			
-			if	(options.has("database")	&&	options.has("verbose"))
+			if	(options.has("database") &&	options.has("verbose"))
 			
 			{
 			
-				Level	logLevel	=	Level.DEBUG;
+				Level logLevel = Level.DEBUG;
 				
-				System.out.println("RUN	WITH:	Database:	"	+	dbURL	+	"	logging	level	requested:	"	+	logLevel);
+				System.out.println("RUN	WITH: Database:	" + dbURL + " logging level	requested:	" +	logLevel);
 				
-				App	anApp	=	new	App(	dbURL,	logLevel);
+				App	anApp	=	new	App(dbURL, logLevel);
 				
 			}
 			
@@ -305,10 +300,10 @@ public class App
 				parser.printHelpOn(System.out);		
 			}
 			
-			catch	(IOException ioEx)
-					{							//	System.out.println("ERROR:	Unable	to	print	usage	-	"	+	ioEx);
+			catch	(IOException ioEx) {
+			
 						LOG.error("ERROR:	Unable	to	print	usage	-	"	+	ioEx);
-					}
+			}
 	}	
     
 
@@ -321,7 +316,7 @@ public class App
     	}
     	else
     	{
-    		//display the command line text entered
+    		
     		for(int i=0; i <args.length; i++)
     		{
     			System.out.println(args[i]);
