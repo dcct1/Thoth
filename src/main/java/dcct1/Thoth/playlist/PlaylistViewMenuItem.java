@@ -2,22 +2,30 @@ package dcct1.Thoth.playlist;
 
 import java.util.Scanner;
 
+import dcct1.Thoth.data.DataManagerSQLite;
 import dcct1.Thoth.menu.ConsoleControls;
 import dcct1.Thoth.menu.IExecuatable;
+import dcct1.Thoth.playlist.PlaylistConsoleListView;
+import dcct1.Thoth.playlist.PlaylistController;
+import dcct1.Thoth.playlist.PlaylistDAO;
 
 public class PlaylistViewMenuItem implements IExecuatable {
 
-	Scanner input = new Scanner(System.in);
-	 
-	public PlaylistViewMenuItem() {}
-
+	public	PlaylistViewMenuItem(){}
 	
-	public void execute() {
+	public	void	execute()
+	{
+		//System.out.println("I	ran:	"	+	UserViewMenuItem.class.getName());
+								
+		//Get	the	User	data
+		PlaylistDAO	model	=	new PlaylistDAO(	DataManagerSQLite.getInstance()	);
 		
-		System.out.println( ConsoleControls.ANSI_RED_BRIGHT + "... PLAYLIST VIEWER ..." + ConsoleControls.ANSI_RESET);
-		System.out.println("\n" + PlaylistViewMenuItem.class.getName() + " has no MVC implementation.");
-        System.out.println(" \n Press enter return to the main menu");
-		this.input.nextLine();
+		PlaylistConsoleListView	view	=	new PlaylistConsoleListView();
+		
+		PlaylistController	controller	=	new PlaylistController(	view,	model);
+		
+		controller.display();
+								
 	}
 }
 

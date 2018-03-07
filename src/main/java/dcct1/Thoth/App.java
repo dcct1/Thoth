@@ -44,7 +44,7 @@ public class App
        //To view the arguments being created
     	seeCommandlineInput(args);
     	
-    	//to instantiate App class based in the parameters entered at the commandline
+    	
     	actionCommandlineInput(args);
     }
     
@@ -54,12 +54,10 @@ public class App
     private static String VERSION = "0.5";
     
     
-   // private String	databaseFile = "jdbc:sqlite:C://Users/Declan/OneDrive - Concern Worldwide/CCT/Software Semester 2/_dev/Thoth/database/oreallyoreilly.db";
     private String dbURL;
     
     
     private static Logger LOG;
-    
     
     public App(String dbURL, Level logLevel)
     {
@@ -80,18 +78,11 @@ public class App
     	
     	DataManagerSQLite.getInstance().setDataFile(this.dbURL);
     	
-    	
+    
     	MenuBuilder	theMenu	=	new	MenuBuilder();
 		
 		theMenu.getMenu().display();
-    	
-    	
-    	
-    	
-    	
-    	//showListOfUsers();
-
-    	
+    		
     	
     System.out.println("\n Press enter to exit program");
     this.someInput.nextLine();
@@ -101,8 +92,11 @@ public class App
     
     }
     
+    
     public App(String dbFile) {
 		this(dbFile, Level.INFO);
+		
+
 	}
 
     public String getDtabaseName()
@@ -292,7 +286,8 @@ public class App
 			
 		}
 }
-    
+   
+	
     private static void printUsage(final	OptionParser	parser)
 	{
 			try

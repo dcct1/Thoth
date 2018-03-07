@@ -99,7 +99,7 @@ public	class MenuHeading extends MenuWidget {
 								
 				StringBuffer	sb	=	new StringBuffer(String.format(	"HEADING:	%x	%s,	%s	\n",	getID(),	getDisplayName(),	getDescription()	));
 								
-				Iterator<MenuWidget>	iterator	=	this.menu.iterator();
+				Iterator<MenuWidget> iterator =	this.menu.iterator();
 				
 				while	(iterator.hasNext())	
 				{

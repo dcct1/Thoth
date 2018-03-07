@@ -31,7 +31,7 @@ public	class MenuBuilder {
 					MenuHeading	maintainHeading	= new	MenuHeading	(2,"Maintenance","Add	users,	playlists	and	music");	 	
 												
 								
-					MenuHeading	adminHeading = new	MenuHeading	(3,"Administration","Music	and	Life	program	administration	options");
+					MenuHeading	adminHeading = new	MenuHeading	(3,"Admin","Music	and	Life	program	administration	options");
 								
 								
 					aMenu.add(playHeading);

@@ -106,23 +106,23 @@ public	class Menu extends MenuWidget {
 			}
 									
 			
-			System.out.println("\nEnter	0	to	exit	or	a	menu	number	to	select	that	function	-->	");
+			System.out.println("\n Enter 0 to exit or a menu number to select that function -->");
 			
-			this.selection	=	this.input.nextInt();
+			this.selection = this.input.nextInt();
 									
 			
 			ConsoleControls.clearConsole();
 									
 			
-			if(		this.selection	==	0)
+			if(	this.selection == 0)
 			
 			{
 			
-				exitMenu	=	1;
+				exitMenu = 1;
 				
 			}
 			
-			else if(	menuOfExecutors.containsKey(this.selection))
+			else if( menuOfExecutors.containsKey(this.selection))
 			
 			{
 			
@@ -130,7 +130,7 @@ public	class Menu extends MenuWidget {
 				
 				{
 				
-					System.out.println(	ConsoleControls.ANSI_YELLOW	+	"picked	:	"	+	menuOfExecutors.get(this.selection)	+	ConsoleControls.ANSI_RESET);
+					System.out.println(	ConsoleControls.ANSI_YELLOW	+"picked	:	"+ menuOfExecutors.get(this.selection)	+	ConsoleControls.ANSI_RESET);
 					
 				}
 				

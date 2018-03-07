@@ -29,7 +29,7 @@ public class User {
 		@Override
 		public String toString() {
 			return String.format(
-					"User [userID=%s, userName=%s, userEmail=%s, userRole=%s, userToken=%s, userStatus=%s, userLastUpdate=%s]",
+					"User [userID=%s, userName=%s,  userEmail=%s,  userRole=%s, userToken=%s, userStatus=%s, userLastUpdate=%s \n]",
 					userID, userName, userEmail, userRole, userToken, userStatus, userLastUpdate);
 		}
 		public int getUserID() {
@@ -75,7 +75,7 @@ public class User {
 			this.userLastUpdate = userLastUpdate;
 		}
 		public void display() {
-			
+			System.out.println(this.toString());
 			
 		}
 		
