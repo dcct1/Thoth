@@ -20,7 +20,7 @@ public class UserController
 								
 			view.setUserList(model.getAllUsers());
 			view.display();
-			System.out.println("	\n	Press	enter	return	to	the	main	menu");
+			System.out.println(" \nPress enter	return to the main menu");
 			this.input.nextLine();
 								
 			}	
