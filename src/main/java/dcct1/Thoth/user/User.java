@@ -1,12 +1,13 @@
 package dcct1.Thoth.user;
 
 public class User {
-	
+
 		/**
 		 * Date March 2018
-		 * Author Declan kenny
+		 * Author DCCT1
+		 * Lab code copied in here
 		 */
-	
+
 		private int userID;
 		private String userName;
 		private String userEmail;
@@ -15,10 +16,10 @@ public class User {
 		private int userStatus;
 		private String userLastUpdate;
 		public User(int userID, String userName, String userEmail, String userRole, String userToken, int userStatus,
-				
-				
+
+
 			String userLastUpdate) {
-			this.userID = userID;
+			this.userID = userID; 
 			this.userName = userName;
 			this.userEmail = userEmail;
 			this.userRole = userRole;
@@ -29,7 +30,7 @@ public class User {
 		@Override
 		public String toString() {
 			return String.format(
-					"User [userID=%s, userName=%s,  userEmail=%s,  userRole=%s, userToken=%s, userStatus=%s, userLastUpdate=%s \n]",
+					"User [User ID = %s, Name = %s,  Contact Email = %s,  Role = %s, Token = %s, User Status = %s,  Last Login = %s ]\n",
 					userID, userName, userEmail, userRole, userToken, userStatus, userLastUpdate);
 		}
 		public int getUserID() {
@@ -76,7 +77,7 @@ public class User {
 		}
 		public void display() {
 			System.out.println(this.toString());
-			
+
 		}
-		
+
 }

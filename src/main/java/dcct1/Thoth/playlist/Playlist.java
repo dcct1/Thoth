@@ -9,7 +9,7 @@ public class Playlist {
 		
 		@Override
 		public String toString() {
-			return String.format("Playlist [playlistID=%s, userID=%s, playlistMessage=%s]", playlistID, userID,
+			return String.format(" Songs [Playlist Number = %s, User ID = %s, Message this playlist gives = %s ]\n", playlistID, userID,
 					playlistMessage);
 		}
 
@@ -24,12 +24,12 @@ public class Playlist {
 		}
 
 
-		public int getUserID() {
+		public int userID() {
 			return userID;
 		}
 
 
-		public void setUserID(int userID) {
+		public void setuserID(int userID) {
 			this.userID = userID;
 		}
 

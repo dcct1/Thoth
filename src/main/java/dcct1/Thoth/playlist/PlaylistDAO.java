@@ -28,7 +28,7 @@ private final	Logger	LOG	=	LogManager.getLogger(PlaylistDAO.class);
 	}
 	
 	
-	public	ArrayList<Playlist>	getAllPlaylists(){
+	public	ArrayList<Playlist>	getAllPlaylist(){
 					
 		ArrayList<Playlist>	playList	=	new	ArrayList<Playlist>();
 					
@@ -115,7 +115,7 @@ private final	Logger	LOG	=	LogManager.getLogger(PlaylistDAO.class);
 	}
 
 
-	public ArrayList<Playlist> getAllUsers() {
+	public ArrayList<Playlist> getAllPlaylists() {
 		// TODO Auto-generated method stub
 		return null;
 	}

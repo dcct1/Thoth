@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public interface IPlaylistDAO {
 	
 		
-		public	ArrayList<Playlist>	getAllUsers();
+		public	ArrayList<Playlist>	getAllPlaylists();
 		public	Playlist	getplaylistID(int	playlistID);
 		public int addplaylistID(	Playlist	aPlaylist);
 		public void updateplaylistID(	Playlist	aPlaylist);

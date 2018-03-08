@@ -257,7 +257,7 @@ public class App
 			
 				System.out.println("RUN	WITH:	Database:	"	+	dbURL	+	"	logging	as	per	main/resources/Log4J2.xml");
 				
-				App	anApp	=	new	App(dbURL);
+				App	anApp =	new	App(dbURL);
 				
 			}	 			
 									

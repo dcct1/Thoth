@@ -19,7 +19,7 @@ this.model	=	model;
 public	void	display()	
 {
 					
-view.setPlayList(model.getAllUsers());
+view.setPlayList(model.getAllPlaylists());
 view.display();
 System.out.println(" \nPress enter	return to the main menu");
 this.input.nextLine();

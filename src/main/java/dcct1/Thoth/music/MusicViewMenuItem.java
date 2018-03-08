@@ -1,23 +1,31 @@
 package dcct1.Thoth.music;
-
-import java.util.Scanner;
-
-import dcct1.Thoth.menu.ConsoleControls;
-import dcct1.Thoth.menu.IExecuatable;
-
-public class MusicViewMenuItem implements IExecuatable {
-
-	Scanner input = new Scanner(System.in);
-	 
-	public MusicViewMenuItem() {}
-
-	public void execute() {
+/**
+ * Date March 2018
+ * Author DCCT1
+ * Lab code copied in here
+ */
+import	dcct1.Thoth.data.DataManagerSQLite;
+import	dcct1.Thoth.menu.IExecuatable;
+ 
+public class MusicViewMenuItem implements IExecuatable 
+	{
+				
+	public	MusicViewMenuItem(){}
+				
+	public	void	execute()
+	{
+		//System.out.println("I	ran:	"	+	UserViewMenuItem.class.getName());
+								
+		//Get	the	User	data
+		MusicDAO	model	=	new MusicDAO(	DataManagerSQLite.getInstance()	);
 		
-		System.out.println( ConsoleControls.ANSI_GREEN_BRIGHT + "... MUSIC VIEWER ..." + ConsoleControls.ANSI_RESET);
-		System.out.println("\n"+ MusicViewMenuItem.class.getName() + " has no MVC implementation.");
-        System.out.println(" \n Press enter return to the main menu");
-		this.input.nextLine();
+		MusicConsoleListView	view	=	new MusicConsoleListView();
+		
+		MusicController	controller	=	new MusicController(	view,	model);
+		
+		controller.display();
+								
 	}
-
+				
 }
                      
