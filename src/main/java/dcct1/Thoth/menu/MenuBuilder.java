@@ -84,7 +84,7 @@ public	class MenuBuilder {
 												3,
 												"Add	Playlist",
 												"Add	a	playlist",
-												"dcct1.Thoth.playlistPlaylistViewMenuItem"
+												"dcct1.Thoth.playlist.PlaylistViewMenuItem"
 												));	
 								
 								maintainHeading.add(new	MenuItem(	

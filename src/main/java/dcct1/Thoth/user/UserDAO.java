@@ -6,8 +6,10 @@ import	java.sql.ResultSet;
 import	java.sql.SQLException;
 import	java.sql.Statement;
 import	java.util.ArrayList;
+
 import	org.apache.logging.log4j.LogManager;
 import	org.apache.logging.log4j.Logger;
+
 import	dcct1.Thoth.data.IDataManager;
 
 

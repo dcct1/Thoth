@@ -10,8 +10,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import dcct1.Thoth.data.IDataManager;
-import dcct1.Thoth.playlist.Playlist;
-import dcct1.Thoth.playlist.PlaylistDAO;
+//import dcct1.Thoth.playlist.Playlist;
+//import dcct1.Thoth.playlist.PlaylistDAO;
 
 public class PlaylistDAO implements IPlaylistDAO{
 	private	IDataManager	dataManager;
@@ -42,7 +42,7 @@ private final	Logger	LOG	=	LogManager.getLogger(PlaylistDAO.class);
 			Statement	statement	=	connection.createStatement();
 			statement.setQueryTimeout(30);		//	set	timeout	to	30	sec.
 							
-			ResultSet resultSet = statement.executeQuery("select * from user-music");
+			ResultSet resultSet = statement.executeQuery("select * from userMusic");
 							
 							
 							
