@@ -30,7 +30,7 @@ public class User {
 		@Override
 		public String toString() {
 			return String.format(
-					"App User [User ID = %s, Name = %s,  Contact Email = %s,  Role = %s, Token = %s, User Status = %s,  Last Login = %s ]\n",
+					"Parent [\nUser ID is: %s \n Name is %s \n  Contact Email is %s \n  Role is %s \n Token is %s \n Status of" + userID + " is %s \n  Last Login was %s ]\n",
 					userID, userName, userEmail, userRole, userToken, userStatus, userLastUpdate);
 		}
 		public int getUserID() {

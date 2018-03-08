@@ -9,7 +9,7 @@ public class Playlist {
 		
 		@Override
 		public String toString() {
-			return String.format(" Song [Playlist Number = %s, User ID = %s, Message this playlist gives = %s ]\n", playlistID, userID,
+			return String.format(" Playlist [\nPlaylist Number is: %s \n Users ID is: %s\n Message of this playlist is: %s\n ]\n", playlistID, userID,
 					playlistMessage);
 		}
 
