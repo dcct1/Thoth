@@ -1,5 +1,11 @@
 package dcct1.Thoth.user;
 
+/**
+ * Date March 2018
+ * Author DCCT1
+ * Lab code copied in here
+ */
+
 import	java.util.Scanner;
 
 

@@ -2,12 +2,11 @@ package dcct1.Thoth.menu;
 
 import	java.util.ArrayList;
 import	java.util.Iterator;
-/*****************************************************************
-*
-*	 Date:	2018
-*	 @author Declan
-
-*****************************************************************/
+/**
+ * Date March 2018
+ * Author DCCT1
+ * Lab code copied in here
+ */
 public	class MenuBuilder {
 				Menu	aMenu;
 				

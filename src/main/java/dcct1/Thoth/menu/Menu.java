@@ -6,12 +6,11 @@ import	java.util.HashMap;
 import	java.util.Iterator;
 import	java.util.Map;
 import	java.util.Scanner;
-/*****************************************************************
-*
-*	 Date:	2018
-*	 @author	Declan
-*	
-*****************************************************************/
+/**
+ * Date March 2018
+ * Author DCCT1
+ * Lab code copied in here
+ */
 public	class Menu extends MenuWidget {
 	
 	ArrayList<MenuWidget>	menu	=	new	ArrayList<MenuWidget>();

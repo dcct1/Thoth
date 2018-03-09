@@ -1,9 +1,9 @@
 package dcct1.Thoth.menu;
 
 /**
- * Date: 2018
- * @author Declan
- *
+ * Date March 2018
+ * Author DCCT1
+ * Lab code copied in here
  */
 
 public	class MenuItem extends MenuWidget{

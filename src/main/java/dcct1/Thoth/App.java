@@ -28,8 +28,8 @@ import dcct1.Thoth.data.DataManagerSQLite;
 
 /**
  * Date: Feb 2018
- * @author Declan.Kenny
- * 
+ * @author dcct1
+ * Used code from labs cct
  * The Purpose of this is to show an example of 
  * 
  * The use of development tools : GIT MAVEN ECLIPSE

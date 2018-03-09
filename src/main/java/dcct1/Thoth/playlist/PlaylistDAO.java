@@ -1,4 +1,9 @@
 package dcct1.Thoth.playlist;
+/**
+ * Date March 2018
+ * Author DCCT1
+ * Lab code copied in here
+ */
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -10,15 +15,12 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import dcct1.Thoth.data.IDataManager;
-//import dcct1.Thoth.playlist.Playlist;
-//import dcct1.Thoth.playlist.PlaylistDAO;
+
 
 public class PlaylistDAO implements IPlaylistDAO{
 	private	IDataManager	dataManager;
 	
-	//	This	is	added	to	every	class	that	needs	to	log	with	one	change
-	//	The	getLogger(	)	part	should	contain	the	name	of	the	class	its	in
-	//	So	you	know	the	messages	that	came	from	objects	of	this	class
+	
 private final	Logger	LOG	=	LogManager.getLogger(PlaylistDAO.class);
 	
 	public PlaylistDAO(	IDataManager	dataManager	)

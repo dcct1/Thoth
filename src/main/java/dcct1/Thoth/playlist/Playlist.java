@@ -1,4 +1,9 @@
 package dcct1.Thoth.playlist;
+/**
+ * Date March 2018
+ * Author DCCT1
+ * Lab code copied in here
+ */
 
 public class Playlist {
 	

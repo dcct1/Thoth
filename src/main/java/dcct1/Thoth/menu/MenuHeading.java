@@ -5,10 +5,9 @@ import	java.util.HashMap;
 import	java.util.Iterator;
 import	java.util.Map;
 /**
- * 
- * Date 2018
- * @author Declan
- *
+ * Date March 2018
+ * Author DCCT1
+ * Lab code copied in here
  */
 public	class MenuHeading extends MenuWidget {
 				
