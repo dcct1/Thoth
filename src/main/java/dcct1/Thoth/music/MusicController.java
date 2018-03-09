@@ -25,7 +25,7 @@ public class MusicController
 
 			view.setMusicList(model.getAllMusic());
 			view.display();
-			System.out.println(" \nPress enter	return to the main menu");
+			System.out.println(" \nPress enter return to the main menu");
 			this.input.nextLine();
 
 			}

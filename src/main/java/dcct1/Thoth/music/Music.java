@@ -30,7 +30,7 @@ public class Music {
 	@Override
 	public String toString() {
 		return String.format(
-				"Music [Song ID = %s, Title = %s, Artist Name = %s, Year Song Published = %s, Link To The Song = %s, Playlist = %s, Message of the Song = %s ]\n",
+				"Music \n [Song ID:  %s \n Title of the Song: %s \n Artist Name: %s \n Year Song was Published:  %s \n Link To The Song:  %s \n Playlist Number: %s \n Message of this Song: %s \n]\n",
 				songID, songName, artist, yearPublished, link, playlistID, songMessage);
 	}
 
