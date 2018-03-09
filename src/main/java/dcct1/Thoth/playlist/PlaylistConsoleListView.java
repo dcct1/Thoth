@@ -23,7 +23,7 @@ public class PlaylistConsoleListView
 				
 	public void display() 
 	{
-		System.out.println(	ConsoleControls.ANSI_RED_BRIGHT	+	"...	USER	VIEWER	..."	+	ConsoleControls.ANSI_RESET);
+		System.out.println(	ConsoleControls.ANSI_RED_BRIGHT	+	"...	Playlist	VIEWER	..."	+	ConsoleControls.ANSI_RESET);
 		System.out.println("\n");
 		Iterator<Playlist>	iterator = this.playList.iterator();
 			
